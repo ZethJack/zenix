@@ -58,21 +58,24 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [ 
-    brave
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
     bibata-cursors
+    brave
     cargo
+    chezmoi
     gcc
-    gnumake
     gh
+    gnumake
     lf
     luajit
     luajitPackages.lua-lsp
     mpv
     neovide
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    qpwgraph
     steam 
     sxiv
     ueberzug
+    webcord
     zathura
 
   ];
