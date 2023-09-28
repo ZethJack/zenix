@@ -63,6 +63,7 @@
     cargo
     gcc
     gnumake
+    gh
     lf
     luajit
     luajitPackages.lua-lsp
@@ -93,11 +94,11 @@
 
   xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "neovide.desktop" ];
-	"application/pdf" = [ "zathura.desktop" ];
-	"image/*" = [ "sxiv.desktop" ];
-	"video/png" = [ "mpv.desktop" ];
-	"video/jpg" = [ "mpv.desktop" ];
-	"video/*" = [ "mpv.desktop" ];
+	  "application/pdf" = [ "zathura.desktop" ];
+	  "image/*" = [ "sxiv.desktop" ];
+	  "video/png" = [ "mpv.desktop" ];
+	  "video/jpg" = [ "mpv.desktop" ];
+	  "video/*" = [ "mpv.desktop" ];
   };
 
   programs.zsh = {
