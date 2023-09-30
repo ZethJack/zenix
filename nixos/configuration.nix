@@ -102,9 +102,9 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # nvidiaPersistenced = true;
   };
 
   # Enable the LXQT Desktop Environment.
@@ -118,7 +118,10 @@
   };
 
   # Configure console keymap
-  console.keyMap = "cz-qwertz";
+  console = {
+    keyMap = "cz-qwertz";
+    font = "Lat2-Terminus16";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
