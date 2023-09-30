@@ -63,8 +63,12 @@
     brave
     cargo
     chezmoi
-    gcc
+    clang
+    coreutils
+    emacs
+    fd
     gh
+    git
     gnumake
     lf
     luajit
@@ -72,6 +76,7 @@
     mpv
     neovide
     qpwgraph
+    ripgrep
     steam 
     sxiv
     ueberzug
