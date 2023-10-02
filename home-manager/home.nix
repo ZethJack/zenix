@@ -59,29 +59,50 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    aria2
     bibata-cursors
     brave
     cargo
     chezmoi
     clang
     coreutils
+    dconf
     emacs
+    exa
     fd
+    file
+    gawk
     gh
     git
+    glow
     gnumake
+    gnupg
+    gnused
+    gnutar
+    jq
     lf
     luajit
     luajitPackages.lua-lsp
     mpv
+    ncdu
     neovide
+    nmap
+    p7zip
+    pciutils
     qpwgraph
     ripgrep
+    socat
     steam 
     sxiv
+    tree
     ueberzug
+    unzip
+    usbutils
     webcord
+    which
+    xz
     zathura
+    zip
 
   ];
 
