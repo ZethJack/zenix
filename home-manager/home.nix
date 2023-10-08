@@ -65,9 +65,12 @@
     cargo
     chezmoi
     clang
+    cmake # to compile vterm
     coreutils
     dconf
     emacs
+    emacs-all-the-icons-fonts
+    emacsPackages.vterm
     exa
     fd
     file
@@ -81,11 +84,13 @@
     gnutar
     jq
     lf
+    libtool #to compile vterm
     luajit
     luajitPackages.lua-lsp
     mpv
     ncdu
     neovide
+    nil #nix LSP
     nmap
     p7zip
     pciutils
