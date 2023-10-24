@@ -184,6 +184,7 @@
 
       "\\\"" = "";
       o = "";
+      D = "delete";
       c = "mkdir";
       "." = "set hidden!";
       "`" = "mark-load";
