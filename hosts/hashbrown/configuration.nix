@@ -75,7 +75,7 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  
+
   # Set time zone and locale
   time.timeZone = "Europe/Prague";
   
@@ -106,9 +106,26 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     # nvidiaPersistenced = true;
   };
+  # Enabling hyprland on nixos
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    # If cursor becomes invisible
+    WLR_NO_HARDWARE_CURSORS = "1";
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
 
   # Enable the LXQT Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.lxqt.enable = true;
 
   # Configure keymap in X11
