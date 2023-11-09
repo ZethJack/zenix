@@ -69,7 +69,7 @@
       potatOS = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [ ./hosts/potatOS ];
-      }
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -82,6 +82,7 @@
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
         ];
+      };
 
       "zeth@potatOS" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance

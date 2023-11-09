@@ -16,6 +16,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ../common/greetd.nix
   ];
 
   nixpkgs = {
@@ -66,7 +67,7 @@
   # boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
   # Set hostname
-  networking.hostName = "zenix";
+  networking.hostName = "hashbrown";
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
 
@@ -143,7 +144,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   # Enable PolicyKit
-  services.polkit.enable = true;
+  security.polkit.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
