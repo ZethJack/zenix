@@ -93,19 +93,19 @@
     LC_TIME = "cs_CZ.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # nVidia gpu settings
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    # nvidiaPersistenced = true;
-  };
+  # # Enable the X11 windowing system.
+  # services.xserver.enable = true;
+  #
+  # # nVidia gpu settings
+  # services.xserver.videoDrivers = ["nvidia"];
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   powerManagement.enable = false;
+  #   powerManagement.finegrained = false;
+  #   nvidiaSettings = true;
+  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #   # nvidiaPersistenced = true;
+  # };
   # Enabling hyprland on nixos
   programs.hyprland = {
     enable = true;
@@ -125,8 +125,8 @@
 
 
   # Enable the LXQT Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.lxqt.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.lxqt.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -142,6 +142,8 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable PolicyKit
+  services.polkit.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;

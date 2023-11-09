@@ -66,7 +66,7 @@
     aria2
     bat
     bibata-cursors
-    brave
+    unstable.brave
     cargo
     chezmoi
     clang
@@ -194,7 +194,7 @@
       do = "dragon-out";
       
       "g~" = "cd";
-      gh = "cd";
+      "gh" = "cd";
       "g/" = "/";
 
       ee = "editor-open";

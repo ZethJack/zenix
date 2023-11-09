@@ -57,21 +57,33 @@
     homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#zenix'
+    # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      zenix = nixpkgs.lib.nixosSystem {
+      hashbrown = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./hosts/hashbrown/configuration.nix
+          ./hosts/hashbrown
         ];
       };
+      potatOS = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [ ./hosts/potatOS ];
+      }
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@zenix'
+    # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "zeth@zenix" = home-manager.lib.homeManagerConfiguration {
+      "zeth@hashbrown" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/home.nix
+        ];
+
+      "zeth@potatOS" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
