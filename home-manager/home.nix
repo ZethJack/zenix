@@ -44,6 +44,10 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+      # prevent home-manager's complaining about deprecated dependency
+      permittedInsecurePackages = [
+        "electron-24.8.6"
+      ];
     };
   };
 
@@ -66,7 +70,7 @@
     aria2
     bat
     bibata-cursors
-    unstable.brave
+    brave
     cargo
     chezmoi
     clang
