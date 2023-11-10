@@ -11,6 +11,7 @@
       ${pkgs.greetd.tuigreet}/bin/tuigreet \
         --time \
         --asterisks \
+        --remember \
         --user-menu \
         --cmd Hyprland
       '';
