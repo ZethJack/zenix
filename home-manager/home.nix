@@ -18,6 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./hyprland.nix
   ];
 
   nixpkgs = {
@@ -54,8 +55,10 @@
   home = {
     username = "zeth";
     homeDirectory = "/home/zeth";
+    sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       EDITOR = "nvim";
+      PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     };
   };
 
@@ -70,7 +73,7 @@
     aria2
     bat
     bibata-cursors
-    brave
+    unstable.brave
     cargo
     chezmoi
     clang
@@ -81,7 +84,7 @@
     emacs
     emacs-all-the-icons-fonts
     emacsPackages.vterm
-    exa
+    eza
     fd
     file
     gawk
@@ -92,12 +95,14 @@
     gnupg
     gnused
     gnutar
+    grapejuice
     grim
     slurp
     wl-clipboard
     jq
     kitty
     lf
+    lxde.lxsession
     libnotify
     libtool #to compile vterm
     luajit
@@ -110,13 +115,17 @@
     networkmanagerapplet
     nodejs_20
     p7zip
+    pass-wayland
+    passExtensions.pass-otp
     pistol
+    pinentry
     pciutils
     pulseaudio
     qpwgraph
     ripgrep
     socat
     steam
+    syncthing
     swww
     sxiv
     tree
@@ -126,6 +135,7 @@
     webcord
     which
     wofi
+    unstable.wofi-pass
     xz
     zathura
     zip
@@ -161,6 +171,12 @@
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;
+  };
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
   };
 
   programs.neovim = {
@@ -246,5 +262,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 }

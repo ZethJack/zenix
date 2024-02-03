@@ -71,6 +71,10 @@
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
 
+  #manage hyprland through nix and home manager
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -110,7 +114,7 @@
   # Enabling hyprland on nixos
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
     xwayland.enable = true;
   };
 
@@ -174,6 +178,14 @@
     ];
   };
   # This setups a SSH server. Very important if you're setting up a headless system.
+ #gnupg
+ services.pcscd.enable = true;
+ services.dbus.packages = [ pkgs.gcr ];
+ programs.gnupg.agent = {
+   enable = true;
+   pinentryFlavor = "gtk2";
+   enableSSHSupport = true;
+ };
   # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
