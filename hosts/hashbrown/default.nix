@@ -71,10 +71,6 @@
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
 
-  #manage hyprland through nix and home manager
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-
   hardware.opengl = {
     enable = true;
     driSupport = true;
@@ -114,8 +110,9 @@
   # Enabling hyprland on nixos
   programs.hyprland = {
     enable = true;
-    enableNvidiaPatches = true;
+    # enableNvidiaPatches = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
   environment.sessionVariables = {
