@@ -18,7 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./hyprland.nix
+    #./hyprland.nix
   ];
 
   nixpkgs = {
@@ -73,7 +73,6 @@
     aria2
     bat
     bibata-cursors
-    unstable.brave
     cargo
     chezmoi
     clang
@@ -97,45 +96,50 @@
     gnutar
     grapejuice
     grim
-    slurp
-    wl-clipboard
+    helix
     jq
     kitty
     lf
-    lxde.lxsession
     libnotify
     libtool #to compile vterm
+    lua-language-server
     luajit
     luajitPackages.lua-lsp
+    lxde.lxsession
+    marksman
     mpv
     ncdu
     neovide
+    networkmanagerapplet
     nil #nix LSP
     nmap
-    networkmanagerapplet
     nodejs_20
     p7zip
     pass-wayland
     passExtensions.pass-otp
-    pistol
-    pinentry
     pciutils
+    pinentry
+    pistol
     pulseaudio
     qpwgraph
+    qutebrowser
     ripgrep
+    slurp
     socat
     steam
-    syncthing
     swww
     sxiv
+    syncthing
     tree
     ueberzug
+    unstable.brave
+    unstable.wofi-pass
     unzip
     usbutils
     webcord
     which
+    wl-clipboard
     wofi
-    unstable.wofi-pass
     xz
     zathura
     zip
