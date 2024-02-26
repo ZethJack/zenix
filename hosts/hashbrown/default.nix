@@ -171,6 +171,10 @@
       git
       curl
       wget
+      (pass.withExtensions (exts: with exts; [
+        pass-otp
+      ]))
+      pass
     #  thunderbird
     ];
   };

@@ -57,8 +57,9 @@
     homeDirectory = "/home/zeth";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "hx";
       PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
+      PASSWORD_STORE_ENABLE_EXTENSIONS="true";
     };
   };
 
@@ -99,6 +100,7 @@
     helix
     jq
     kitty
+    lazygit
     lf
     libnotify
     libtool #to compile vterm
@@ -115,8 +117,6 @@
     nmap
     nodejs_20
     p7zip
-    pass-wayland
-    passExtensions.pass-otp
     pciutils
     pinentry
     pistol
